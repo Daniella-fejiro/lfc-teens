@@ -7,6 +7,7 @@ import connectDB from "./config/db.js"
 import workerRoutes from "./routes/workerRoutes.js"
 import unitRoutes from './routes/unitRoutes.js'
 import birthdayRoutes from './routes/birthdayRoutes.js'
+import statsRoutes from './routes/statsRoutes.js'
 
 const app = express()
 
@@ -16,6 +17,7 @@ app.use(express.json())
 app.use("/workers", workerRoutes)
 app.use('/units', unitRoutes)
 app.use('/birthdays', birthdayRoutes)
+app.use('/stats', statsRoutes)
 
 app.get("/", (req, res) => {
   res.send("helloooo")
